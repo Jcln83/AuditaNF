@@ -14,7 +14,8 @@ O AuditaNF é um aplicativo criado como uma ferramenta auxiliar no processo de f
 	matplotlib
 - Arquivo para importação: O arquivo que contém as notas fiscais a serem auditadas devem estar no formato “.csv” e tem que conter os seguintes campos: 'id','cnpj_prestador', 'nome_prestador', 'cnpj_tomador', 'nome_tomador', 'numero_nota', 'mes_comp', 'ano_comp', 'data_nota', 'competencia_nota', 'valor_total', 'base_calculo', 'aliquota','imposto', 'local_servico', 'situacao', 'responsavel_imp', 'atividade', 'descricao_servico', 'observacao', 'comp_servico', 'contrato', 'RM', 'NL', 'vlr_servicos', 'sem_isencao', 'classificacao', 'auditada', separados por “ ; ”(ponto e vírgula).
 
-#Funcionalidades:
+
+# Funcionalidades:
 
 O sistema é composto por 5 abas, sendo elas: Importação, Notas Fiscais, Pesquisar, Gráficos e Log. Suas funcionalidades são:
 	Importação: Esta aba é realizada à importação do arquivo CSV com as notas fiscais:
