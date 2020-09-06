@@ -18,10 +18,10 @@ O AuditaNF é um aplicativo criado como uma ferramenta auxiliar no processo de f
 # Funcionalidades:
 
 O sistema é composto por 5 abas, sendo elas: Importação, Notas Fiscais, Pesquisar, Gráficos e Log. Suas funcionalidades são:
-	Importação: Esta aba é realizada à importação do arquivo CSV com as notas fiscais:
-		Primeiro clicar no botão selecionar.
-		Selecionar no computador o arquivo .csv e clicar em abrir.
-		Clicar no botão importar.
+	-Importação: Esta aba é realizada à importação do arquivo CSV com as notas fiscais:
+		-Primeiro clicar no botão selecionar.
+		-Selecionar no computador o arquivo .csv e clicar em abrir.
+		-Clicar no botão importar.
 	
 
 
