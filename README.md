@@ -12,7 +12,7 @@ O AuditaNF é um aplicativo criado como uma ferramenta auxiliar no processo de f
 - Bibliotecas Python: É necessário instalar as seguintes bibliotecas externas utilizando o comando pip:
 	- beautifulsoup4
 	- matplotlib
-- Arquivo para importação: O arquivo que contém as notas fiscais a serem auditadas devem estar no formato “.csv” e conter os seguintes campos separados por “;”(ponto e vírgula): 'id','cnpj_prestador', 'nome_prestador', 'cnpj_tomador', 'nome_tomador', 'numero_nota', 'mes_comp', 'ano_comp', 'data_nota', 'competencia_nota', 'valor_total', 'base_calculo', 'aliquota','imposto', 'local_servico', 'situacao', 'responsavel_imp', 'atividade', 'descricao_servico', 'observacao', 'comp_servico', 'contrato', 'RM', 'NL', 'vlr_servicos', 'sem_isencao', 'classificacao', 'auditada'.
+- Arquivo para importação: O arquivo que contém as notas fiscais a serem auditadas devem estar no formato “.csv” e conter os seguintes campos separados por “;”(ponto e vírgula): 'cnpj_prestador', 'nome_prestador', 'cnpj_tomador', 'nome_tomador', 'numero_nota', 'mes_comp', 'ano_comp', 'data_nota', 'competencia_nota', 'valor_total', 'base_calculo', 'aliquota','imposto', 'local_servico', 'situacao', 'responsavel_imp', 'atividade', 'descricao_servico' e 'observacao'.
 
 
 # Funcionalidades:
