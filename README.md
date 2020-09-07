@@ -19,13 +19,13 @@ O AuditaNF é um aplicativo criado como uma ferramenta auxiliar no processo de f
 
 O sistema é composto por 5 abas, sendo elas: Importação, Notas Fiscais, Pesquisar, Gráficos e Log. Suas funcionalidades são:
 
-- Importação: Esta aba é realizada à importação do arquivo CSV com as notas fiscais:
+- **Importação**: Esta aba é realizada à importação do arquivo CSV com as notas fiscais:
 	- Primeiro clicar no botão selecionar.
 	- Selecionar no computador o arquivo .csv e clicar em abrir.
 	- Clicar no botão importar.
 	
-- Notas Fiscais: Nesta aba é possível exibir todas as notas fiscais importadas para o sistema com diversos filtros, Alterar o status de auditoria das notas e Excluir as notas fiscais. Cada procedimento é realizado através dos botões:
-	- Exibir Notas
+- **Notas Fiscais**: Nesta aba é possível exibir todas as notas fiscais importadas para o sistema com diversos filtros, Alterar o status de auditoria das notas e Excluir as notas fiscais. Cada procedimento é realizado através dos botões:
+	- **Exibir Notas:**
 		- Primeiro selecionar um dos filtros:
 			- Importação: Exibe as notas por ordem de importação.
 			- Classificação: Exibe as notas pela nota de classificação da maior para a menor.
@@ -36,19 +36,19 @@ O sistema é composto por 5 abas, sendo elas: Importação, Notas Fiscais, Pesqu
 			- Sim: Exibe apenas as notas que já foram auditadas.
 			- Não: Exibe apenas as notas que não foram auditadas.
 		- Clicar no botão Exibir Notas.
-	- Marcar/Des.:
+	- **Marcar/Des.:**
 		- Primeiro selecionar as notas fiscais que deseja alterar o status.
-		- Clicar no botão Marcar/Des para alterar para o status de auditada “Sim” ou “Não”.
-	- Excluir Notas:
+		- Clicar no botão Marcar/Des para alterar para o status para auditada “Sim” ou “Não”.
+	- **Excluir Notas:**
 		- Primeiro selecionar as notas fiscais que deseja excluir.
 		- Clicar no botão Excluir Notas.
-- Pesquisar: Nesta aba é possível realizar uma pesquisa em toda base de dados.
+- **Pesquisar**: Nesta aba é possível realizar uma pesquisa em toda base de dados.
 	- Digitar a informação que deseja localizar e clicar no botão Pesquisar.
 	
-- Gráficos: Nesta aba são exibidos 4 tipos de gráficos:
-	- Valor total das notas: Exibe um gráfico em formato de barras onde o Y é composto pelo nome das empresas e o X é composto pelo valor total das notas de cada empresa.
-	- Nº de notas com fraudes: Exibe um gráfico em formato de barras onde o Y é composto pelo nome das empresas e o X é composto pela quantidade de notas fiscais que apresentaram classificação maior ou igual à 1.
-	- Valor total de notas fiscais com fraudes: Exibe um gráfico em formato de barras onde o Y é composto pelo nome das empresas e o X é composto pela soma do valor total de todas as notas que apresentaram classificação maior ou igual à 1.
-	- Valor total de NF com serviços sem isenção: Exibe um gráfico em formato de barras onde o Y é composto pelo nome das empresas e o X é composto pela soma do valor total de todas as notas que apresentaram descrição de serviço sem isenção de imposto.
+- **Gráficos**: Nesta aba são exibidos 4 tipos de gráficos:
+	- **Valor total das notas:** Exibe um gráfico em formato de barras onde o Y é composto pelo nome das empresas e o X é composto pelo valor total das notas de cada empresa.
+	- **Nº de notas com fraudes:** Exibe um gráfico em formato de barras onde o Y é composto pelo nome das empresas e o X é composto pela quantidade de notas fiscais que apresentaram classificação maior ou igual à 1.
+	- **Valor total de notas fiscais com fraudes:** Exibe um gráfico em formato de barras onde o Y é composto pelo nome das empresas e o X é composto pela soma do valor total de todas as notas que apresentaram classificação maior ou igual à 1.
+	- **Valor total de NF com serviços sem isenção:** Exibe um gráfico em formato de barras onde o Y é composto pelo nome das empresas e o X é composto pela soma do valor total de todas as notas que apresentaram descrição de serviço sem isenção de imposto.
 	
-- LOG: Esta tela é exibido o log de todas as transações de INSERT, UPDATE e DELETE no banco de dados do sistema.
+- **LOG**: Esta tela é exibido o log de todas as transações de INSERT, UPDATE e DELETE no banco de dados do sistema.
