@@ -61,14 +61,14 @@ class ConectarDB:
                      auditada varchar)""")
             self.con.commit()
         except Exception as err:
-            Log().inserirLog("ERRO ao Criar Tabelas: " + str(err))
+            Log().inserirLog("ERRO ao Criar Tabelas, motivo: " + str(err))
 
     def inserirRegistro(self, comando:str):
 
         try:
             self.cur.execute(comando)
         except Exception as err:
-            Log().inserirLog("FALHA ao inserir registro: "+ str(err))
+            Log().inserirLog("FALHA ao inserir registro, motivo: "+ str(err))
             Log().inserirLog("REVERTENDO operação (rollback)")
             self.con.rollback()
         else:
@@ -93,7 +93,7 @@ class ConectarDB:
         try:
             self.cur.execute(comando)
         except Exception as err:
-            Log().inserirLog("FALHA na alteração do registro "+ str(err))
+            Log().inserirLog("FALHA na alteração do registro, motivo "+ str(err))
             Log().inserirLog("REVERTENDO operação (rollback)")
             self.con.rollback()
         else:
@@ -107,7 +107,7 @@ class ConectarDB:
         try:
             self.cur.execute(comando)
         except Exception as err:
-            Log().inserirLog("FALHA ao remover registro: "+ str(err))
+            Log().inserirLog("FALHA ao remover registro, motivo: "+ str(err))
             Log().inserirLog("REVERTENDO operação (rollback)")
             self.con.rollback()
         else:
@@ -172,7 +172,7 @@ def importarNotas():
             # recebe, remove as tags HTML e normaliza o campo Observação da Nota
             try:
                 observ = row['observacao']
-            except Exception as err:
+            except KeyError as err:
                 messagebox.showwarning('Atenção', 'Campo {} não encontrado!'.format(err))
                 break
             soup = BeautifulSoup(observ, 'html.parser')  # REMOVE HTML
@@ -181,7 +181,7 @@ def importarNotas():
             # Recebe e normaliza o campo de Descrição do Serviço da Nota
             try:
                 descricao_serv = row['descricao_servico']
-            except Exception as err:
+            except KeyError as err:
                 messagebox.showwarning('Atenção', 'Campo {} não encontrado!'.format(err))
                 break
             descricao = normalize('NFKD', descricao_serv).encode('ASCII', 'ignore').decode('ASCII')
@@ -246,7 +246,7 @@ def importarNotas():
                         classificacao += 0                         # é a mesma do periodo do servico
                     else:
                         classificacao += 1
-                except Exception as err:
+                except KeyError as err:
                     messagebox.showwarning('Atenção', 'Campo {} não encontrado!'.format(err))
                     break
 
@@ -257,7 +257,7 @@ def importarNotas():
                 else:
                     if row['aliquota'] != 0:
                         classificacao += 1
-            except Exception as err:
+            except KeyError as err:
                 messagebox.showwarning('Atenção', 'Campo {} não encontrado!'.format(err))
                 break
 
@@ -272,7 +272,7 @@ def importarNotas():
                 if StringToDate(row['data_nota']) >= StringToDate(datafinal):
                     if row['aliquota'] == '' or int(row['aliquota']) == 0:
                         classificacao += 1
-            except Exception as err:
+            except KeyError as err:
                 messagebox.showwarning('Atenção', 'Campo {} não encontrado!'.format(err))
                 break
 
@@ -288,7 +288,7 @@ def importarNotas():
                         row['situacao'], row['responsavel_imp'], row['atividade'], row['descricao_servico'], obs,
                         ','.join(comp_servico), ','.join(contrato), ','.join(rm), ','.join(nl), vlrservicos,
                         ','.join(sem_isencao), classificacao))
-            except Exception as err:
+            except KeyError as err:
                 messagebox.showwarning('Atenção', 'Campo {} não encontrado!'.format(err))
                 break
 
@@ -316,7 +316,7 @@ class Log:
     def __init__(self):
         self.arquivo = None
         self.dataatual = datetime.now()
-        with open("log.txt","a") as self.arquivo:
+        with open("log.txt","a") as self.arquivo: #Caso arquivo log.txt não exista cria um novo quando o sitema é iniciado.
             pass
         self.arquivo.close()
 
@@ -428,7 +428,7 @@ def gerarGrafico():
         figura.suptitle("Valor Total das Notas Fiscais Fraudulentas")
         db = ConectarDB()
         valores = db.consultarRegistros('SELECT max(nome_prestador),sum(valor_total) FROM notasfiscais where classificacao > 0 order by nome_prestador')
-        if valores == [(None,None)]:
+        if valores == [(None,None)] or valores == []:
             messagebox.showinfo('Informação', 'Nenhuma informação encontrada')
         else:
             for x in valores:
